@@ -15,7 +15,7 @@
 - https://nextjs.org/learn
 - Next.js uses file-system routing where folders are used to create nested routes. Each folder represents a route segment that maps to a URL segment.
 -  @vercel/postgres:
-    1) regular
+    1) use inside any Server Component. But to allow you to navigate the components more easily, we've kept all the data queries in the data.ts file, and you can import them into the components
     import { sql } from "@vercel/postgres";
 
     const likes = 100;

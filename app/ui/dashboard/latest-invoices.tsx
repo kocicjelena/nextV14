@@ -2,7 +2,9 @@ import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
-export default async function LatestInvoices() {
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from 'react';
+export default async function LatestInvoices({latestInvoices}: any) {
   return (
     <div className="flex w-full flex-col md:col-span-4 lg:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
@@ -10,7 +12,7 @@ export default async function LatestInvoices() {
       </h2>
       <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4">
         <div className="bg-white px-6">
-          {latestInvoices.map((invoice, i) => {
+          {latestInvoices.map((invoice: { id: Key | null | undefined; image_url: string | StaticImport; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; email: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; amount: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }, i: number) => {
             return (
               <div
                 key={invoice.id}
@@ -26,8 +28,7 @@ export default async function LatestInvoices() {
                     src={invoice.image_url}
                     className="mr-4 rounded-full"
                     width={32}
-                    height={32}
-                  />
+                    height={32} alt={''}                  />
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold md:text-base">
                       {invoice.name}

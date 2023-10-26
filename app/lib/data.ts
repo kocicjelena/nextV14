@@ -63,7 +63,13 @@ export async function fetchCardData() {
          SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
          FROM invoices`;
-
+        /*          With Promise.allSettled(),
+        you can also return an array of objects with 
+        status and value keys, so can check 
+        a promise's status is fulfilled or rejected 
+        before passing the value to your component.
+          It's useful
+        if you want to handle errors more gracefully. */
     const data = await Promise.all([
       invoiceCountPromise,
       customerCountPromise,
