@@ -6,7 +6,7 @@
 (Furthermore, in a production, whenever <Link> components appear in the browser's viewport, Next.js automatically prefetches the code for the linked route in the background.)
 * Server Components help us access our back-end resources more securely:
  (async React Server Components included)
-* network waterfalls
+* network waterfalls: can be used instead of parallel when appropriate
 * parallel data fetching using a JavaScript Pattern
 * create API endpoints using Route Handlers (https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 * https://vercel.com/docs/storage/vercel-postgres/sdk
@@ -31,3 +31,4 @@
     * If you're fetching data from the client, you want to have an API layer that runs on the server to avoid exposing your database secrets to the client
 - using React Server Components (fetching data on the server) API layer can be skipped (use promises)
 
+https://nextjs.org/learn/dashboard-app/static-and-dynamic-rendering
