@@ -1,5 +1,8 @@
 ## benefit
 * “use client” - Client Component, which means you can use event listeners and hooks.
+* React Server Actions
+* Server Components
+* revalidate the client cache using the revalidatePath API.
 * One benefit of using layout is that on navigation, only the page components update while the layout won’t re-render. In Next.js, this is called partial rendering
 * Show an active link with the usePathName() hook.
 * In addition to client-side navigation, Next.js automatically code splits your application by route segments. This is different from a traditional SPA, where browser loads all your application code on initial load.
@@ -39,5 +42,5 @@ Streaming in two ways:
     * If you're using 3rd party services that provide an API.
     * If you're fetching data from the client, you want to have an API layer that runs on the server to avoid exposing your database secrets to the client
 - using React Server Components (fetching data on the server) API layer can be skipped (use promises)
-
+- https://nextjs.org/docs/app/building-your-application/caching#request-memoization
 https://nextjs.org/learn/dashboard-app/static-and-dynamic-rendering
