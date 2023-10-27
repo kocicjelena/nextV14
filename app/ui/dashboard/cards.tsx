@@ -5,7 +5,14 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
-
+import {CustomerField,
+CustomersTable,
+InvoiceForm,
+InvoicesTable,
+LatestInvoiceRaw,
+User,
+Revenue,
+} from '../../lib/definitions';
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
@@ -13,7 +20,7 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
-export default async function Cards() {
+export default async function Cards({totalPaidInvoices,totalPendingInvoices,numberOfInvoices,numberOfCustomers}:{totalPaidInvoices:string | number,totalPendingInvoices:any,numberOfInvoices:any,numberOfCustomers:any}) {
   return (
     <>
       <Card title="Collected" value={totalPaidInvoices} type="collected" />

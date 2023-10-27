@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { generatePagination } from '@/app/lib/utils';
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
+export default function Pagination({ totalPages,currentPage,createPageURL }: { totalPages: number,currentPage:number,createPageURL:(page: string | number) => string }) {
   const allPages = generatePagination(currentPage, totalPages);
 
   return (
