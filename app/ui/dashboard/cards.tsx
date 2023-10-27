@@ -13,6 +13,7 @@ LatestInvoiceRaw,
 User,
 Revenue,
 } from '../../lib/definitions';
+import { fetchCardData } from '@/app/lib/data';
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
@@ -20,7 +21,13 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
-export default async function Cards({totalPaidInvoices,totalPendingInvoices,numberOfInvoices,numberOfCustomers}:{totalPaidInvoices:string | number,totalPendingInvoices:any,numberOfInvoices:any,numberOfCustomers:any}) {
+export default async function Cards() {
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
   return (
     <>
       <Card title="Collected" value={totalPaidInvoices} type="collected" />

@@ -7,7 +7,10 @@
 * Server Components help us access our back-end resources more securely:
  (async React Server Components included)
 * network waterfalls: can be used instead of parallel when appropriate
-* parallel data fetching using a JavaScript Pattern
+* each component can be considered a chunk as for streaming (Chunks are rendered in parallel)
+Streaming in two ways:
+ - At the page level, with the loading.tsx file.
+ - For specific components, with <Suspense>
 * create API endpoints using Route Handlers (https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 * https://vercel.com/docs/storage/vercel-postgres/sdk
 
