@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { sql } from '@vercel/postgres'; 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { signIn } from '@/auth';
+;
 // export type State = {
 //   errors?: {
 //     customerId?: string[];
@@ -103,4 +105,18 @@ export async function updateInvoice(formData: FormData) {
       } catch (error) {
         return { message: 'Database Error: Failed to Delete Invoice.' };
       }    revalidatePath('/dashboard/invoices');
+  }
+
+  export async function authenticate(
+    prevState: string | undefined,
+    formData: FormData,
+  ) {
+    try {
+      await signIn('credentials', Object.fromEntries(formData));
+    } catch (error) {
+      if ((error as Error).message.includes('CredentialsSignin')) {
+        return 'CredentialSignin';
+      }
+      throw error;
+    }
   }

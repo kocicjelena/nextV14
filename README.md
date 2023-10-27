@@ -43,4 +43,14 @@ Streaming in two ways:
     * If you're fetching data from the client, you want to have an API layer that runs on the server to avoid exposing your database secrets to the client
 - using React Server Components (fetching data on the server) API layer can be skipped (use promises)
 - https://nextjs.org/docs/app/building-your-application/caching#request-memoization
+- openssl rand -base64 32
+- metadata:
+Config-based: Export a static metadata object or a dynamic generateMetadata function in a layout.js or page.js file.
+
+File-based: Next.js has a range special files are specifically recognized for metadata purposes:
+
+favicon.ico, apple-icon.jpg, and icon.jpg: Utilized for favicons and icons
+opengraph-image.jpg and twitter-image.jpg: Employed for social media images
+robots.txt: Provides instructions for search engine crawling
+sitemap.xml: Offers information about the website's structure
 https://nextjs.org/learn/dashboard-app/static-and-dynamic-rendering
